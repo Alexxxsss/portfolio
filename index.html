@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alexander - Game & Web Developer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <!-- <div class="logo">Alexander</div>  DELETED -->
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="menu-toggle" aria-label="Open navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="animated-section">
+        <div class="hero-content">
+          <h1>Hey, I'm Alexander!</h1>
+          <p class="subtitle">
+            I make cool games and websites. Let's build something awesome!
+          </p>
+          <a href="#projects" class="cta-button">See My Stuff</a>
+        </div>
+      </section>
+
+      <section id="about" class="animated-section">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              I've been hooked on
+              <strong>game development for about 4-5 years</strong> and
+              tinkering with <strong>web stuff for 3 years</strong>. I love
+              bringing ideas to life, whether it's an epic game world or a slick
+              website.
+            </p>
+            <p>
+              Always learning new things and up for a challenge to make cool,
+              quality stuff!
+            </p>
+          </div>
+          <!-- You can add an image of yourself here if you like -->
+          <!-- <img src="your-image.jpg" alt="Alexander" class="about-image"> -->
+        </div>
+      </section>
+
+      <section id="skills" class="animated-section">
+        <h2>What I Use</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Game Development</h3>
+            <ul>
+              <li>Unity Engine</li>
+              <li>C# Programming</li>
+              <li>Unity Netcode for GameObjects</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Web Development</h3>
+            <ul>
+              <li>HTML5 & CSS3</li>
+              <li>JavaScript (ES6+)</li>
+              <li>Svelte & SvelteKit</li>
+              <li>Threlte (Three.js for Svelte)</li>
+              <li>A-Frame (WebXR)</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>3D & Design</h3>
+            <ul>
+              <li>Blender (Modeling, Texturing)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="animated-section">
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+          <!-- Project: Fear of Martef -->
+          <div class="project-card">
+            <img src="fom.png" alt="Fear of Martef Game Screenshot" />
+            <h3>Fear of Martef (WIP)</h3>
+            <p>
+              A multiplayer horror game where you try to escape a creepy dungeon
+              before... well, you know. It's got a neat story and is currently a
+              work in progress!
+            </p>
+            <p class="tech-stack">
+              <strong>Tech:</strong> Unity, C#, Netcode for GameObjects
+            </p>
+            <div class="project-links">
+              <!-- Add link if you have one, e.g., a devlog or itch.io page -->
+              <a href="#" target="_blank" class="project-link disabled-link"
+                >More Info Soon</a
+              >
+              <!-- <a href="LINK_TO_FOM_GITHUB_OR_DEVLOG" target="_blank" class="project-link">GitHub/Devlog</a> -->
+            </div>
+          </div>
+
+          <!-- Project: Aegis Uprising -->
+          <div class="project-card">
+            <img src="au.png" alt="Aegis Uprising Game Screenshot" />
+            <h3>Aegis Uprising (WIP)</h3>
+            <p>
+              An ambitious multiplayer war game mixing tower defense,
+              third-person shooter action, strategy, and vehicle combat. Also a
+              work in progress!
+            </p>
+            <p class="tech-stack">
+              <strong>Tech:</strong> Unity, C#, Netcode for GameObjects
+            </p>
+            <div class="project-links">
+              <!-- Add link if you have one -->
+              <a href="#" target="_blank" class="project-link disabled-link"
+                >More Info Soon</a
+              >
+              <!-- <a href="LINK_TO_AU_GITHUB_OR_DEVLOG" target="_blank" class="project-link">GitHub/Devlog</a> -->
+            </div>
+          </div>
+
+          <!-- Project: Karriärkurvan Website -->
+          <div class="project-card">
+            <!-- IMPORTANT: Replace with your actual screenshot -->
+            <img src="kk.png" alt="Karriärkurvan Website Screenshot" />
+            <h3>Karriärkurvan Info Site</h3>
+            <p>
+              Developed an informational website for a job convention, making it
+              easy for attendees and exhibitors to find what they need.
+            </p>
+            <p class="tech-stack">
+              <strong>Tech:</strong> Svelte, HTML, CSS, JavaScript
+            </p>
+            <div class="project-links">
+              <a
+                href="https://karriarkurvan.se/"
+                target="_blank"
+                class="project-link"
+                >Live Site</a
+              >
+              <!-- Add GitHub link if public -->
+              <!-- <a href="LINK_TO_KARRIARKURVAN_GITHUB" target="_blank" class="project-link">GitHub</a> -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="animated-section">
+        <h2>Let's Connect!</h2>
+        <p>
+          Got a cool idea, a project in mind, or just want to chat? Hit me up!
+        </p>
+        <div class="contact-methods">
+          <a href="mailto:your.email@example.com" class="contact-button"
+            >Email Me</a
+          >
+          <a
+            href="https://linkedin.com/in/yourprofile"
+            target="_blank"
+            class="contact-button"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/yourusername"
+            target="_blank"
+            class="contact-button"
+            >GitHub</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="currentYear"></span> Alexander. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

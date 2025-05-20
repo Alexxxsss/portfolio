@@ -1,0 +1,484 @@
+:root {
+  --primary-color: #6a0dad;
+  --secondary-color: #9b59b6;
+  --background-color: #121212;
+  --surface-color: #1e1e1e;
+  --text-color: #e0e0e0;
+  --text-muted-color: #a0a0a0;
+  --border-color: #333;
+  --font-family: "Poppins", sans-serif;
+  --transition-speed: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* --- Navigation --- */
+header {
+  background-color: rgba(30, 30, 30, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+  max-width: 1100px;
+  margin: 0 auto; /* Centers the nav block */
+  padding: 0 20px;
+  display: flex;
+  /* MODIFIED: Center the primary content (the UL on desktop) */
+  justify-content: center;
+  align-items: center;
+  min-height: 40px; /* Ensure nav has some height consistently */
+}
+
+/* nav .logo REMOVED as the element is removed from HTML */
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center; /* Vertically align items if they wrap, though unlikely here */
+}
+
+nav ul li {
+  margin: 0 12px; /* Adjusted margin for centered links */
+}
+/* If first/last item needs no margin on one side for perfect centering of group:
+nav ul li:first-child {
+  margin-left: 0;
+}
+nav ul li:last-child {
+  margin-right: 0;
+} */
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 400;
+  transition: color var(--transition-speed) ease;
+  padding: 5px 0; /* Add some padding for better click area */
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--primary-color);
+}
+
+.menu-toggle {
+  display: none; /* Hidden by default, shown on mobile */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  /* MODIFIED: Position absolutely on mobile so nav's justify-content doesn't misplace it */
+  position: absolute;
+  right: 20px; /* Position to the right */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  margin: 5px 0;
+  transition: all var(--transition-speed) ease;
+}
+
+/* --- General Section Styling --- */
+section {
+  padding: 100px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+}
+
+section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--secondary-color);
+  margin: 8px auto 0;
+}
+
+/* --- Hero Section --- */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)),
+    url("https://via.placeholder.com/1920x1080.png/121212/e0e0e0?text=Abstract+Background")
+      no-repeat center center/cover;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero-content .subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--text-muted-color);
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background-color var(--transition-speed) ease,
+    transform var(--transition-speed) ease;
+  box-shadow: 0 4px 15px rgba(106, 13, 173, 0.4);
+}
+
+.cta-button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+/* --- About Section --- */
+#about .about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  text-align: left;
+}
+
+#about .about-text p {
+  margin-bottom: 15px;
+  color: var(--text-muted-color);
+  font-size: 1.1rem;
+}
+#about .about-text strong {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+/* --- Skills Section --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  text-align: left;
+}
+
+.skill-category {
+  background-color: var(--surface-color);
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.skill-category h3 {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+}
+
+.skill-category ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skill-category ul li {
+  margin-bottom: 10px;
+  color: var(--text-muted-color);
+  position: relative;
+  padding-left: 20px;
+}
+
+.skill-category ul li::before {
+  content: "✓";
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* --- Projects Section --- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  align-items: stretch;
+}
+
+.project-card {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: left;
+  transition: transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card h3 {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  margin: 15px 20px 10px;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted-color);
+  margin: 0 20px 10px;
+}
+
+.project-card .tech-stack {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  margin: 0 20px 15px;
+}
+.project-card .tech-stack strong {
+  color: var(--text-color);
+}
+
+.project-links {
+  padding: 15px 20px 20px;
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.project-link {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background-color var(--transition-speed) ease;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.project-link:hover {
+  background-color: var(--secondary-color);
+}
+
+.project-link.disabled-link {
+  background-color: #555;
+  color: #aaa;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.project-link.disabled-link:hover {
+  background-color: #555;
+}
+
+/* --- Contact Section --- */
+#contact p {
+  font-size: 1.1rem;
+  color: var(--text-muted-color);
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-methods {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-button {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 10px 25px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color var(--transition-speed) ease,
+    color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.contact-button:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: var(--surface-color);
+  color: var(--text-muted-color);
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  /* MODIFIED: Nav behavior for mobile without logo */
+  nav {
+    /* justify-content: flex-end; No longer needed here due to absolute positioning of toggle */
+    /* The menu toggle is now absolutely positioned, so nav's justify-content primarily affects ul on desktop */
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Ensure this aligns below your header */
+    left: 0;
+    width: 100%;
+    background-color: rgba(30, 30, 30, 0.95);
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add shadow to dropdown */
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0; /* Stacked items, full width */
+    text-align: center;
+    width: 100%;
+  }
+  nav ul li a {
+    display: block; /* Make link take full width of li for easier clicking */
+    padding: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block; /* Show hamburger menu */
+    /* Absolute positioning is already set above */
+  }
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content .subtitle {
+    font-size: 1.2rem;
+  }
+
+  section h2 {
+    font-size: 2rem;
+  }
+
+  #about .about-content {
+    flex-direction: column;
+  }
+  #about .about-image {
+    max-width: 80%;
+    margin-top: 20px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content .subtitle {
+    font-size: 1rem;
+  }
+  .cta-button,
+  .contact-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  section {
+    padding: 80px 15px;
+  }
+  /* Adjust menu toggle position if needed for very small screens */
+  .menu-toggle {
+    right: 15px;
+  }
+}
